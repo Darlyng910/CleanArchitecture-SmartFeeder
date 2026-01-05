@@ -9,8 +9,8 @@ namespace Domain.Interfaces
 {
     public interface IHorario
     {
-        Task<IEnumerable<Horario>> ObtenerPorMascotaIdAsync(Guid mascotaId);
-        Task CrearAsync(Horario horario);
-        Task EliminarAsync(Guid id);
+        Task<IEnumerable<Horario>> ObtenerPorMascota(Guid mascotaId);
+        Task Crear(Horario horario);
+        Task Eliminar(Guid id);
     }
 }

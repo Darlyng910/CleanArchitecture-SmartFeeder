@@ -9,9 +9,9 @@ namespace Domain.Interfaces
 {
     public interface IMascota
     {
-        Task<IEnumerable<Mascota>> ObtenerTodosAsync();
-        Task<Mascota?> ObtenerPorIdAsync(Guid id);
-        Task CrearAsync(Mascota mascota);
-        Task ActualizarAsync(Mascota mascota);
+        Task<IEnumerable<Mascota>> All();
+        Task<Mascota?> ObtenerID(Guid id);
+        Task Crear(Mascota mascota);
+        Task Actualizar(Mascota mascota);
     }
 }
