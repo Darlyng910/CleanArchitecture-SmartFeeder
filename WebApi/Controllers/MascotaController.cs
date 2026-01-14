@@ -33,7 +33,7 @@ namespace WebApi.Controllers
             if (!mascotas.Any())
                 return NotFound("No hay mascotas registradas");
 
-            return Ok(_mapper.Map<IEnumerable<MascotaDTOs>>(mascotas));
+            return Ok(_mapper.Map<IEnumerable<MascotaResponseDTOs>>(mascotas));
         }
 
         [HttpGet("{id}")]
@@ -43,7 +43,7 @@ namespace WebApi.Controllers
             if (mascota == null)
                 return NotFound(new { mensaje = "Mascota no encontrada" });
 
-            return Ok(_mapper.Map<MascotaDTOs>(mascota));
+            return Ok(_mapper.Map<MascotaResponseDTOs>(mascota));
         }
 
         [HttpPost]

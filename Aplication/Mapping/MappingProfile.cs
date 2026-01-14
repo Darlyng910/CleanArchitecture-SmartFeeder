@@ -16,6 +16,7 @@ namespace Aplication.Mapping
             CreateMap<Mascota, MascotaDTOs>().ReverseMap();
             CreateMap<Horario, HorarioDTOs>().ReverseMap();
             CreateMap<Alimentacion, AlimentacionDTOs>().ReverseMap();
+            CreateMap<Mascota, MascotaResponseDTOs>().ForMember(dest => dest.MascotaId, opt => opt.MapFrom(src => src.Id));
         }
     }
 }
