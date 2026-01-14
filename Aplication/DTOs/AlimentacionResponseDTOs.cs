@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Aplication.DTOs
 {
-    public class Alimentacion
+    public class AlimentacionResponseDTOs
     {
-        public Guid Id { get; set; }
-        public Guid MascotaId { get; set; }
-        public Mascota Mascota { get; set; } = null!;
+        public string Mascota { get; set; } = string.Empty;
         public int CantidadGramos { get; set; }
         public DateTime FechaHora { get; set; }
     }
 }
+

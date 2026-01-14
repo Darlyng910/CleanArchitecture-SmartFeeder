@@ -27,10 +27,20 @@ namespace Infraestructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Alimentacion>> ObtenerTodo()
+        {
+            return await _appDbContext.Alimentaciones
+                .Include(a => a.Mascota) 
+                .OrderByDescending(a => a.FechaHora)
+                .ToListAsync();
+        }
+
         public async Task Registrar(Alimentacion alimentacion)
         {
             _appDbContext.Alimentaciones.Add(alimentacion);
             await _appDbContext.SaveChangesAsync();
         }
+
+
     }
 }

@@ -21,6 +21,21 @@ namespace WebApi.Controllers
             _registrarAlimentacion = registrarAlimentacion;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var data = await _alimentacion.ObtenerTodo();
+
+            var response = data.Select(a => new AlimentacionResponseDTOs
+            {
+                Mascota = a.Mascota.Nombre,
+                CantidadGramos = a.CantidadGramos,
+                FechaHora = a.FechaHora
+            });
+
+            return Ok(response);
+        }
+
         [HttpGet("mascota/{mascotaId}")]
         public async Task<IActionResult> GetHistorial(Guid mascotaId)
         {

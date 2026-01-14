@@ -9,6 +9,7 @@ namespace Domain.Interfaces
 {
     public interface IAlimentacion
     {
+        Task<IEnumerable<Alimentacion>> ObtenerTodo();
         Task<IEnumerable<Alimentacion>> ObtenerPorMascota(Guid mascotaId);
         Task Registrar(Alimentacion alimentacion);
     }
